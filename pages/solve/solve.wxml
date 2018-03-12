@@ -1,0 +1,55 @@
+<view class="page">
+    <view class="question">
+        <view class="page__hd">
+            <view class="page__title">{{Question.title}}</view>
+            <view class="page__desc">{{askTime}}</view>
+        </view>
+        <view class="page__bd">
+            <view class="weui-article">
+                <view class="weui-article__section">
+                    <view class="weui-article__p">
+                        {{Question.detail}}
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="answer">
+        <view class="page__hd">
+            <view class="page__title">Answer</view>
+        </view>
+        <view class="page__bd">
+            <view class="weui-article weui-article-border" hidden='{{isAnswer}}' wx:for="{{Answer}}" wx:key="index">
+                <view class="weui-article__section">
+                    <view class="page__desc">{{item.operator}}</view>
+                    <view class="weui-article__p">
+                        {{item.message}}
+                    </view>
+                </view>
+            </view>
+            <view class="weui-cells weui-cells_after-title" hidden='{{!isAnswer}}'>
+                <view class="weui-cell">
+                    <view class="weui-cell__bd">
+                        <textarea class="weui-textarea" placeholder="请输入你的回复" style="height: 5.3em" bindinput='bindInputContent' />
+                        <view class="weui-textarea-counter">{{contentNum}}/140</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view wx:if="{{Question.isDone != 0 }}">
+        <view class="footer" hidden='{{isAnswer}}'>
+            <view style='background-color:red;width:100%'>此投诉已结束</view>
+        </view>
+    </view>
+    <view wx:if="{{Question.isDone == 0}}">
+        <view class="footer" hidden='{{isAnswer}}'>
+            <view style='background-color:green;' bindtap="finish">结束</view>
+            <view style='background-color:rgb(11,86,138);' bindtap="answer">回复</view>
+        </view>
+        <view class="footer" hidden='{{!isAnswer}}'>
+            <view style='background-color:gray' bindtap='cancel'>取消</view>
+            <view style='background-color:rgb(11,86,138)' bindtap='confirm'>回复</view>
+        </view>
+    </view>
+</view>

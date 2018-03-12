@@ -1,0 +1,18 @@
+.question .page__hd{
+    padding-bottom: 0;
+}
+.question .page__bd{
+    padding-bottom: 0;
+}
+.question .page__desc{
+  padding-left: 10px;
+}
+.weui-article-border{
+    border-bottom: 4px solid white;
+}
+.answer .page__hd{
+    padding: 0 40px;
+}
+.answer .page__desc{
+  margin-bottom: 5px;
+}

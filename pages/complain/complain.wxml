@@ -1,0 +1,37 @@
+<view class="page">
+    <view class="page__bd">
+        <view class="weui-cells__title">问题</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder="请输入维权/投诉标题" bindinput='bindInputTitle'/>
+                </view>
+            </view>
+        </view>
+        <view class="weui-cells__title">投诉部门</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_select">
+                <view class="weui-cell__bd">
+                    <picker bindchange="bindDepartmentChange" value="{{departmentIndex}}" range="{{department}}">
+                        <view class="weui-select">{{department[departmentIndex]}}</view>
+                    </picker>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input input-dep" placeholder="自己添加!" bindinput='bindInputDep'/>
+                </view>
+            </view>
+        </view>
+        <view class="weui-cells__title">内容</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell">
+                <view class="weui-cell__bd">
+                    <textarea class="weui-textarea" placeholder="请输入维权/投诉的具体内容" style="height: 5.3em" bindinput='bindInputContent' />
+                    <view class="weui-textarea-counter">{{contentNum}}/140</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="bottom-btn">
+        <button class="weui-btn" type="default" bindtap='submit'>提交</button>
+    </view>
+</view>

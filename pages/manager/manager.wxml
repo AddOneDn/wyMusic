@@ -1,0 +1,37 @@
+<view class="page">
+    <loading wx:if="{{!List}}"></loading>
+    <view class="weui-cells__title">选择部门</view>
+    <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_select">
+            <view class="weui-cell__bd">
+                <picker bindchange="bindDepartmentChange" value="{{departmentIndex}}" range="{{department}}">
+                    <view class="weui-select">{{departmentName}}</view>
+                </picker>
+            </view>
+        </view>
+    </view>
+    <view class="weui-cells__title">选择状态</view>
+    <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_select">
+            <view class="weui-cell__bd">
+                <picker bindchange="bindStatusChange" value="{{statusIndex}}" range="{{status}}">
+                    <view class="weui-select">{{status[statusIndex]}}</view>
+                </picker>
+            </view>
+        </view>
+    </view>
+    <image src="../img/logout.png" class="logoutImg" bindtap='logout'></image>
+    <block wx:for="{{List}}" wx:key="index">
+        <view class="weui-panel weui-panel_access">
+            <view class="weui-panel__bd" wx:if="{{item.department == departmentName || departmentName == ''}}" bindtap='toSolve' data-id="{{item.id}}">
+                <view class="weui-media-box weui-media-box_text">
+                    <view class="weui-media-box__title weui-media-box__title_in-text">{{item.title}}</view>
+                    <view class="weui-media-box__desc">{{item.detail}}</view>
+                    <view class="weui-media-box__desc status_n status" wx:if="{{item.isProcessed == '0' && item.isDone == '0'}}">未处理</view>
+                    <view class="weui-media-box__desc status_d status" wx:if="{{item.isProcessed == '1' && item.isDone == '0'}}">处理中</view>
+                    <view class="weui-media-box__desc status_y status" wx:if="{{item.isDone != '0'}}">已处理</view>
+                </view>
+            </view>
+        </view>
+    </block>
+</view>

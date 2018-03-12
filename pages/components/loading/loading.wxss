@@ -1,0 +1,36 @@
+.container{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%,-50%);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background-color: rgba(0,0,0,0.3);
+}
+.loader{
+  width:200rpx;
+  height:200rpx;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+.loader::before{
+  content:"";
+  color:white;
+  height:50px;
+  width:50px;
+  background:transparent;
+  border-radius:50%;
+  border:10px solid blue;
+  border-color:#0277BD #0277BD #0277BD #81D4FA;
+  animation:load .6s infinite ease-in-out;
+  box-shadow:0px 0px 40px -2px skyblue;
+}
+@keyframes load{
+  100%{
+    transform:rotatez(360deg);
+  }
+}

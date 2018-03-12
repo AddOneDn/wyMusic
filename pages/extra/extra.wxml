@@ -1,0 +1,7 @@
+<view class="container">
+  <text class="margin"></text>
+  <text class="title">答案仅供参考</text>
+  <text><text style="color: red">你</text> vs 上一个人</text>
+  <ec-canvas id="mychart-dom-graph" canvas-id="mychart-graph" ec="{{ ec }}"></ec-canvas>
+  <text class="msg">{{msg}}</text>
+</view>

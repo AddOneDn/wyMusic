@@ -1,0 +1,24 @@
+@import '../details/details.wxss';
+.weui-cells_after-title{
+    margin-top: 20px;
+}
+.weui-article-border{
+    border-bottom: 2px solid white;
+}
+.footer{
+    position: fixed;
+    bottom:0;
+    left:0;
+    width: 100%;
+    height:40px;
+}
+.footer view{
+    float: left;
+    width: 50%;
+    height:100%;
+    text-align: center;
+    font-family: '黑体';
+    line-height: 40px;
+    font-size:14px;
+    color: white;
+}

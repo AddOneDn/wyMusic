@@ -1,0 +1,10 @@
+.bottom-btn{
+    width:90%;
+    margin: 0 auto;
+}
+.bottom-btn button{
+    color: rgb(11,86,138);
+}
+.input-dep{
+    padding-left: 10px;
+}

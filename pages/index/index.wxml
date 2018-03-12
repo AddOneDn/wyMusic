@@ -1,0 +1,14 @@
+<view class="body">
+    <loading wx:if="{{isLoading}}"></loading>
+    <view class="top">
+        <image src="../img/nuaa.jpg"></image>
+    </view>
+    <view class="mid">
+        <input bindinput='bindInputId' placeholder='学号' />
+        <input type="password" bindinput='bindInputPas' placeholder='密码' />
+         <checkbox-group bindchange="checkboxChange">
+                <checkbox><text>我是管理员</text></checkbox>
+        </checkbox-group> 
+        <button bindtap='login'>登录</button>
+    </view>
+</view>

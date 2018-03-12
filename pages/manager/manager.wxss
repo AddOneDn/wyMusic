@@ -1,0 +1,27 @@
+@import '../myFeedBack/myFeedBack.wxss';
+
+.weui-select{
+    font-weight: 600;
+    color: rgb(11,86,138);
+}
+.status{
+    float:right;
+    font-size:10px;
+}
+.status_n{
+    color:red;
+}
+.status_y{
+    color:green;
+}
+.status_d{
+    color:orange;
+}
+.logoutImg{
+    position: fixed;
+    bottom: 70px;
+    right: 10px;
+    width:20px;
+    height:20px;
+    z-index: 100;
+}
